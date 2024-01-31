@@ -120,9 +120,9 @@ function newQuestion() {
 
     // re-enable input and set focus
     answerInput.disabled = false
-    answerInput.focus()
-
+    
     setTimer()
+    answerInput.focus()
 }
 
 function countdown() {
