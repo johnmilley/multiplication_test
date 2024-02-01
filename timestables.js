@@ -1,9 +1,11 @@
 // Multiplication Practice
-// version 0.2
+// version 0.2.1
 // What's new?
 //  - keypad for mobile
 //  - 10 random q from array
 //  - results board
+
+// - ui imporovements
 
 
 // globals
@@ -54,6 +56,7 @@ const answerInput = document.querySelector("#answer")
 
 const questionsRemaining = document.querySelector('#questions-remaining')
 
+const startControlArea = document.querySelector('#start-controls-area')
 const playButton = document.querySelector('#play');
 
 const timerArea = document.querySelector('#timer-area')
@@ -88,6 +91,8 @@ answerInput.addEventListener('keypress', (e) => {
 //-------------  functions 
 function checkAnswer(e) {
     answerInput.disabled = true;
+
+    clearInterval(timer)
     
     // calculate actual answer
     answer = parseInt(leftOperand.innerText) * parseInt(rightOperand.innerText)
@@ -123,38 +128,7 @@ function newQuestion() {
 
     // move to function
     if (equations <= 0) {
-        equationArea.classList.toggle('hidden')
-        timerArea.classList.toggle('hidden')
-        questionsRemaining.classList.toggle('hidden')
-        keyPadArea.classList.toggle('hidden')
-
-        numberCorrectElement.innerText = totalCorrect
-        totalNumberOfQuestionsElement.innerText = totalQuestions
-
-        let percent = ((totalCorrect / totalQuestions) * 100).toFixed(0)
-
-        percentElement.innerText = `${percent}%`
-        
-        let letterGrade = ""
-
-        if (percent >= 80) {
-            letterGrade = 'A'
-        } else if (percent >= 70) {
-            letterGrade = 'B'
-        } else if (percent >= 60) {
-            letterGrade = 'C'
-        } else if (percent >= 50) {
-            letterGrade = 'D'
-        } else {
-            letterGrade = 'F'
-        }
-
-        letterGradeElement.innerText = letterGrade
-
-        resultsArea.classList.toggle('hidden')
-        
-        clearInterval(timer)
-
+        endPractice()
         return
     }
 
@@ -188,6 +162,40 @@ function newQuestion() {
     answerInput.focus()
 }
 
+function endPractice() {
+    equationArea.classList.toggle('hidden')
+    timerArea.classList.toggle('hidden')
+    questionsRemaining.classList.toggle('hidden')
+    keyPadArea.classList.toggle('hidden')
+
+    numberCorrectElement.innerText = totalCorrect
+    totalNumberOfQuestionsElement.innerText = totalQuestions
+
+    let percent = ((totalCorrect / totalQuestions) * 100).toFixed(0)
+
+    percentElement.innerText = `${percent}%`
+    
+    let letterGrade = ""
+
+    if (percent >= 80) {
+        letterGrade = 'A'
+    } else if (percent >= 70) {
+        letterGrade = 'B'
+    } else if (percent >= 60) {
+        letterGrade = 'C'
+    } else if (percent >= 50) {
+        letterGrade = 'D'
+    } else {
+        letterGrade = 'F'
+    }
+
+    letterGradeElement.innerText = letterGrade
+
+    resultsArea.classList.toggle('hidden')
+    
+    clearInterval(timer)
+}
+
 function countdown() {
     if (time == 0) {
         clearInterval(timer)
@@ -208,8 +216,9 @@ function countdown() {
 
 playButton.addEventListener('click', () => {
     playButton.disabled = true
+    equationArea.classList.toggle('hidden')
     timerElement.classList.toggle('hidden')
-    playButton.classList.toggle('hidden')
+    startControlArea.classList.toggle('hidden')
     keyPadArea.classList.remove('hidden')
     answerInput.focus()
     newQuestion()
