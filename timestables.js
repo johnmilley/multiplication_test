@@ -47,7 +47,6 @@ for (let i = 1; i <= totalQuestions; i++) {
 /*  GRAB HTML ELEMENTS */
 
 const equationArea = document.querySelector('#equation-area')
-
 const leftOperand = document.querySelector('#left')
 const rightOperand = document.querySelector('#right')
 const answerInput = document.querySelector("#answer")
@@ -60,6 +59,9 @@ const timerArea = document.querySelector('#timer-area')
 const timerElement = document.querySelector('#time-remaining')
 
 const keyPadArea = document.querySelector('#keypad-area')
+const answerInput = document.querySelector("#answer")
+const instructionsElement = document.querySelector('#instructions')
+/******************/
 
 // const instructionsElement = document.querySelector('#instructions')
 
@@ -74,7 +76,6 @@ const letterGradeElement = document.querySelector('#letter-grade')
 
 
 /******************/
-
 
 /* CHECK ANSWER by pressing Enter or clicking button */
 
