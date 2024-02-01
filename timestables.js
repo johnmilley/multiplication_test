@@ -30,7 +30,7 @@ for (let i = 3; i <= 5; i++) {
 }
 
 // change totalQuestions to control how many q user sees
-totalQuestions = 1
+totalQuestions = 10
 
 for (let i = 1; i <= totalQuestions; i++) {
     random_index = Math.floor(Math.random() * allPossibleEquations.length)
