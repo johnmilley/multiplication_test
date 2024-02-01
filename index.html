@@ -10,28 +10,60 @@
     <header>
         <h1>Multiplication <br>Practice</h1>
     </header>
-    <main>
+
+    <!-- EQUATION -->
+    <section id="equation-area">
         <div id="equation">
             <p id="left">?</p>
             <p>×</p>
             <p id="right">?</p>
             <p>=</p>
-            <input type="number" name="" id="answer" autofocus disabled>
+            <input type="number" name="" id="answer" autofocus disabled inputmode="none">
         </div>
-    </main>
+    </section>
 
-    <section id="start-controls">
-        <p id="instructions" style="text-align: center;">Click start and begin multiplying!</p>
+    <!-- RESULTS -->
+    <section id="results-area">
+        <div class="hidden" id="results">
+            <p>You answered <span id="number-correct"></span> out of <span id="total-number-of-questions"></span> (<span id="percent"></span>)</p>
+            <!-- <p id="percent"></p> -->
+            <p id="letter-grade"></p>
+        </div>
+    </section>
+
+    <!-- START BUTTON -->
+    <section id="start-controls-area">
+        <!-- <p id="instructions" style="text-align: center;">Click start and begin multiplying!</p> -->
         <button style="color: green;"id="play">▶</button>
     </section>
 
-    <section id="timer-section">
+    <!-- TIMER -->
+    <section id="timer-area">
         <p class="hidden" id="time-remaining">15</p>
-        <!-- <p id="message"></p> -->
     </section>
 
-    <section id="control">
+    <!-- CONTROLS -->
+    <section id="questions-remaining-area">
         <p id="questions-remaining"></p>
+    </section>
+
+    <!-- KEYPAD -- ideally, only show on mobile -->
+    <section id="keypad-area" class="hidden">
+        <div id="keypad">
+            <!-- div.key[data-key="$"]*12{$} -->
+            <button class="key" data-key="1">1</button>
+            <button class="key" data-key="2">2</button>
+            <button class="key" data-key="3">3</button>
+            <button class="key" data-key="4">4</button>
+            <button class="key" data-key="5">5</button>
+            <button class="key" data-key="6">6</button>
+            <button class="key" data-key="7">7</button>
+            <button class="key" data-key="8">8</button>
+            <button class="key" data-key="9">9</button>
+            <button id="backspace-key" class="key">⌫</button>
+            <button class="key" data-key="0">0</button>
+            <button id="enter-key" class="key">↪</button>
+        </div>
     </section>
     
     <footer>
