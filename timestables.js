@@ -1,14 +1,9 @@
 // Multiplication Practice
-<<<<<<< HEAD
-// version 0.1
-// it works. sort of.
-=======
 // version 0.2
 // What's new?
 //  - keypad for mobile
 //  - 10 random q from array
 //  - results board
->>>>>>> alt-history
 
 
 // globals
@@ -50,20 +45,12 @@ for (let i = 1; i <= totalQuestions; i++) {
 /***************/
 
 /*  GRAB HTML ELEMENTS */
-<<<<<<< HEAD
-const equationArea = document.querySelector('main')
-const questionsRemaining = document.querySelector('#questions-remaining')
-=======
 
 const equationArea = document.querySelector('#equation-area')
 
->>>>>>> alt-history
 const leftOperand = document.querySelector('#left')
 const rightOperand = document.querySelector('#right')
 const answerInput = document.querySelector("#answer")
-<<<<<<< HEAD
-const instructionsElement = document.querySelector('#instructions')
-=======
 
 const questionsRemaining = document.querySelector('#questions-remaining')
 
@@ -86,7 +73,6 @@ const letterGradeElement = document.querySelector('#letter-grade')
 
 
 
->>>>>>> alt-history
 /******************/
 
 
