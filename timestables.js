@@ -1,6 +1,6 @@
 // Multiplication Practice
 // version 0.1
-// it works.
+// it works. sort of.
 
 
 // globals
@@ -20,7 +20,6 @@ for (let i = 3; i <= 5; i++) {
 }
 
 /*  GRAB HTML ELEMENTS */
-
 const equationArea = document.querySelector('main')
 const questionsRemaining = document.querySelector('#questions-remaining')
 const leftOperand = document.querySelector('#left')
@@ -29,12 +28,7 @@ const playButton = document.querySelector('#play');
 const timerElement = document.querySelector('#time-remaining')
 const answerInput = document.querySelector("#answer")
 const instructionsElement = document.querySelector('#instructions')
-
 /******************/
-
-
-// newQuestion() // generate starting q
-// setTimer()    // begin timer
 
 
 /* CHECK ANSWER by pressing Enter or clicking button */
